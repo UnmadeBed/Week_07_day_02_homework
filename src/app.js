@@ -5,9 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
       currency:{},
-      selectedCurrency:0,
-      convertTo:0,
-      currencyToEuros:0
+      selectedCurrency: null,
+      convertTo: null,
     },
     mounted(){
       this.fetchCurrency()
@@ -16,9 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       exchange: function() {
         return (this.selectedCurrency * this.convertTo).toFixed(2);
       },
-      euros: function(){
-        return (this.currencyToEuros / this.convertTo).toFixed(2);
-      }
     },
     methods:{
       fetchCurrency: function(){

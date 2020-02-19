@@ -9,17 +9,18 @@
   <div id="app">
     <h1>Currency Exchange Calculator</h1>
 
-    <label for="chosen_currency"><h3>Select A Currency:</h3></label>
+    <label for="chosen_currency"><h3>Select Currency To Convert:</h3></label>
     <select id="chosen_currency" v-model.number="selectedCurrency">
       <option>Select a currency</option>
       <option v-for="(key, value) in currency.rates" :value=key> {{value}} </option>
     </select>
 
-    <label for="euros"><h3>Enter Euros:</h3></label>
+    <label for="euros"><h3>Enter Sum In Euros:</h3></label>
     <input type="number" name="euros" v-model.number="convertTo"><br>
 
 
-    <h3> {{exchange}} </h3>
+    <!-- <h3 v-for="(key, value) in currency.rates" :value=key>Total In {{value}}: {{exchange}} </h3> -->
+    <h3>Total In Chosen Currency: {{exchange}} </h3>
 
 </body>
 </html>
